@@ -31,7 +31,7 @@ public class Mapper {
         var detalle = e.getDetalleVenta().stream().map(det -> DetalleVentaDto.builder()
                 .id(det.getId())
                 .nombreProducto(det.getProducto().getNombre())
-                .CantidadProducto(det.getCantidadProducto())
+                .cantidadProducto(det.getCantidadProducto())
                 .precio(det.getPrecio())
                 .subTotal(det.getPrecio() * det.getCantidadProducto())
                 .build()

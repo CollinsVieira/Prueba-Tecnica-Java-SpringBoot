@@ -68,6 +68,7 @@ public class VentaService implements IVentaService {
         for (DetalleVentaDto detDTO : ventaDto.getDetalle()) {
             // Buscar producto por id (tu detDTO usa id como id de producto)
             Producto p = productoRepository.findByNombre(detDTO.getNombreProducto()).orElse(null);
+            System.out.println(p);
             if (p == null)
             {throw new RuntimeException("Producto no encontrado: " + detDTO.getNombreProducto());}
 
@@ -79,7 +80,7 @@ public class VentaService implements IVentaService {
             detalleVent.setVenta(vent);
 
             detalles.add(detalleVent);
-            totalCalculado = totalCalculado+(detDTO.getPrecio()*detDTO.getCantidadProducto());
+            totalCalculado = totalCalculado+(detDTO.getPrecio() * detDTO.getCantidadProducto());
 
         }
         //Seteamos la lista de detalle Venta

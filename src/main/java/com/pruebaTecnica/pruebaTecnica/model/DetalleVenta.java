@@ -18,10 +18,12 @@ public class DetalleVenta {
     private Integer cantidadProducto;
     private double precio;
     //Venta
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="ventaId")
     private Venta venta;
 
     //Producto
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="productoId")
     private Producto producto;
 }

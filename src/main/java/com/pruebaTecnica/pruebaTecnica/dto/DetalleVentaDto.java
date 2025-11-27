@@ -10,7 +10,7 @@ import lombok.*;
 public class DetalleVentaDto {
     private Long id;
     private String nombreProducto;
-    private Integer CantidadProducto;
+    private Integer cantidadProducto;
     private Double precio;
     private double subTotal;
 }
