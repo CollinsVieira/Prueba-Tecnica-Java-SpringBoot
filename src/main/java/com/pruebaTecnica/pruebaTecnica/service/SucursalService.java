@@ -33,7 +33,7 @@ public class SucursalService implements ISucursalService {
 
     @Override
     public SucursalDto actualizarSucursal(Long id, SucursalDto sucursalDto) {
-        Sucursal aux = repository.findById(id).orElseThrow(()-> new NotFoundException("No se encontro el producto con el id: " + id));
+        Sucursal aux = repository.findById(id).orElseThrow(()-> new NotFoundException("No se encontro la sucursal con el id: " + id));
 
         aux.setNombre(sucursalDto.getNombre());
         aux.setDireccion(sucursalDto.getDireccion());
@@ -43,7 +43,7 @@ public class SucursalService implements ISucursalService {
     @Override
     public void eliminarSucursal(Long id) {
         if(!repository.existsById(id)){
-            throw new NotFoundException("No se encontro el producto con el id: " + id);
+            throw new NotFoundException("No se encontro la sucursal con el id: " + id);
         }
         repository.deleteById(id);
 
